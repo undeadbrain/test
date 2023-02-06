@@ -50,6 +50,15 @@ class ServerFirst {
 
             HashMap clientData = (HashMap) sois.readObject(); /*сервер получает данные с клиента*/
 
+            while(true){
+            try{
+                 HashMap clientData = (HashMap) sois.readObject();
+                //TO DO
+           } catch (IOException e) {
+             System.out.println("Read failed");
+             System.exit(-1);
+           }
+
             if (clientData.containsKey("main")) {
                 System.out.println("Client's number\n: " + clientData.get("main")); /*выводим id клиента*/
                 Boolean existing = false;
