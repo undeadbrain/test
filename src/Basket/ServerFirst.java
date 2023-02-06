@@ -12,16 +12,16 @@ import java.util.Objects;
 import static java.lang.System.setIn;
 
 class ServerFirst {
-    protected static HashMap<String, ArrayList<String>> _docs = new HashMap<>();
-    protected static Boolean needToLogging = false;
+    private  static HashMap<String, ArrayList<String>> _docs = new HashMap<>();
+    private static Boolean needToLogging = false;
 
-    protected static ArrayList<User> _users = new ArrayList<User>();
+    private static ArrayList<User> _users = new ArrayList<User>();
 
-    protected static ArrayList<Material> _materials = new ArrayList<Material>();
+    private static ArrayList<Material> _materials = new ArrayList<Material>();
 
-    protected static ArrayList<String> _entities = new ArrayList<>(Arrays.asList("users", "materials"));
+    private static ArrayList<String> _entities = new ArrayList<>(Arrays.asList("users", "materials"));
 
-    protected static char newline = '\n';
+    private static char newline = '\n';
 
     public static void main(String[] arg) throws IOException, IllegalAccessException {
         ServerSocket serverSocket = null;
