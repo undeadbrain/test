@@ -4,6 +4,9 @@ import java.util.Arrays;
 import java.util.List;
 
 public class SysOut {
+    // Style. String 8. There are two guides about Java's coding style: https://www.oracle.com/technetwork/java/codeconventions-150003.pdf, https://google.github.io/styleguide/javaguide.html;
+    // 1. Constant names use UPPER_SNAKE_CASE
+    // 2. Do not start variable name from _.
     private static final List<String> _colors = Arrays.asList("BLACK", "RED", "GREEN", "YELLOW", "BLUE", "MAGENTA", "CYAN", "WHITE");
 
     public enum Color {
