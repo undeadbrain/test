@@ -121,7 +121,7 @@ public class SysOut {
     }
 
     public SysOut(String text) {
-        prepareAndPrint(text, null, null, null, null, null, null, null, 0);
+        prepareAndPrint(text, null, null, false, null, null, null, null, 0);
     }
 
     public SysOut(String text, String color) {
@@ -137,7 +137,7 @@ public class SysOut {
     }
 
     public SysOut(String text, String color, Boolean bold, String background, String underline) {
-        prepareAndPrint(text, color, bold, background, underline, null, null, null, 0);
+        prepareAndPrint(text, color, bold, background, underline, false, false, false, 0);
     }
 
     public SysOut(String text, String color, Boolean bold, String background, String underline, Boolean high_intensity) {
@@ -153,14 +153,14 @@ public class SysOut {
     }
 
     private static void prepareAndPrint(String text, String color, Boolean bold, String background,
-                                        String underline, Boolean high_intensity, Boolean high_intensity_background,
-                                        Boolean bold_high_intensity, int newLineCount) {
-        if (text != null && !text.equals("")) {
+                                        String underline, boolean high_intensity, boolean high_intensity_background,
+                                        boolean bold_high_intensity, int newLineCount) {
+        if (text != null && !text.isEmpty()) {
             System.out.print(Color.RESET);
 
             if (color != null) {
-                if (!color.equals("") && _colors.contains(color.toUpperCase())) {
-                    String colorPostfix = (bold_high_intensity != null) ? "_BOLD_BRIGHT" : ((bold != null) ? "_BOLD" : ((high_intensity != null) ? "_BRIGHT" : ""));
+                if (!color.isEmpty() && _colors.color(color.toUpperCase())) {
+                    String colorPostfix = (bold_high_intensity) ? "_BOLD_BRIGHT" : ((bold) ? "_BOLD" : ((high_intensity) ? "_BRIGHT" : ""));
                     String colorName = color.toUpperCase() + colorPostfix;
                     Color textColor = Color.contains(colorName);
 
